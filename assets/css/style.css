@@ -1,0 +1,244 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+.navbar{
+    background-color: white;
+    height: 80px;
+    margin: 20px;
+    border-radius: 16px;
+    padding: 0.5rem;
+}
+
+.navbar-brand {
+    font-weight: 500;
+    color: blue;
+    font-size: 24px;
+    transition: 0.3s color;
+}
+
+.navbar-toggler{
+    border: none;
+    font-size: 1.25rem;
+}
+
+.navbar-toggler:focus, .btn-close:focus{
+    box-shadow: none;
+    outline:none;
+}
+
+.nav-link {
+    color: #666777;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-link::before {
+    background-color: #82c4ff !important;
+}
+
+.active::before {
+    background-color: blue!important;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: black;
+}
+
+/*PARTIE ACCUEIL*/
+.accueil {
+    background: url(/assets/images/fond.jpg) no-repeat center;
+    background-size: cover;
+    width: 100%;
+}
+
+.accueil::before{
+    background-color: rgba(0, 0, 0, 0.6);
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.accueil .container {
+    height: 100vh;
+    z-index: 1;
+    position: relative;
+}
+
+.accueil h1 {
+    font-size: 1.5em;
+}
+
+.accueil h2 {
+    font-size: 1.2em;
+}
+
+
+
+/* PARTIE ABOUT */
+
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    background: white;
+    padding: 2rem; /*Pour que ça ne colle pas avec autre section*/
+}
+
+.about h2 span{
+    color: blue;
+    text-shadow: 0 0 50px blue;
+}
+.about-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px blue;
+}
+.about-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: 0.4s ease-in-out;
+    box-shadow: 0 0 25px blue;
+}
+.about-img img:hover{
+    box-shadow: 0 0 50px blue,
+    0 0 100px blue;
+}
+.heading{
+    text-align: center;
+    font-size: 8rem;
+}
+
+.about-content {
+    margin: 0 auto;
+    padding: 1rem;
+    max-width: 600px;
+}
+
+.about-content h2{
+    text-align: left;
+    line-height: 1.5;
+}
+.about-content h3{
+    font-size: 2rem;
+}
+.about-content p{
+    font-size: 1.4rem;
+    margin: 1.5rem 0 2rem;
+}
+
+/*Partie footer*/
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 0;
+    background-color: black;
+}
+
+.footer .social {
+    text-align: center;
+    padding-bottom: 25px;
+    color: white;
+}
+
+.footer .social a {
+    font-size: 25px;
+    color: white;
+    border: 2px solid black;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.footer .social a:hover {
+    transform: scale(1.2) translateY(-10px);
+    background-color: black;
+    color: white;
+    box-shadow: 0 0 25px white;
+}
+
+.footer .copyright {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+}
+
+.footer .copyright a:hover {
+    border-bottom: 2px solid white;
+}
+
+
+
+@media (min-width: 991px) {
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: red;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::before, .nav-link.active::before {
+        width: 100%;
+        visibility: visible;
+    }
+}
+
+@media(max-width:895px){
+    .about{
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+    .about-content{
+        margin: 0 2rem 4rem;
+        text-align: center;
+    }
+    .about-img img{
+        width: 50vw;
+        margin: 1rem 0;
+        /* margin-bottom: 3rem; */
+    }
+    .heading {
+        font-size: 3rem;
+    }
+    .about-content h2{
+        font-size: 2.4rem;
+    }
+    .about-content h3{
+        font-size: 1.8rem;
+    }
+    .about-content p {
+        font-size: 1.2rem;
+    }
+}

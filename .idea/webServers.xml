@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="4c2103e2-775e-4929-83e5-e39063684246" name="S1.03">
+        <fileTransfer rootFolder="/home/ines/rapport_S1.03.fr" accessType="SFTP" host="192.168.0.15" port="22" sshConfigId="47e2b67c-3f00-4d45-98a4-1af91b6a80c5" sshConfig="ines@192.168.0.15:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

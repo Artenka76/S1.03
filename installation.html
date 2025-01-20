@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Installation</title>
+      <link rel="stylesheet" href="assets/css/style2.css">
+
+    <!-- Lien pour pouvoir utiliser Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+          crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+
+  </head>
+  <body class="page">
+    <!--Barre de navigation-->
+    <nav class="navbar bg-dark navbar-expand-lg fixed-top" data-bs-theme="dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">SYSTEMES</a>
+        <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Compte rendu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <li class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" aria-current="page" href="index.html">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2 active" href="installation.html">Installation</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="web.html">Web</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="fin.html">Finalité</a>
+              </li>
+            </li>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!---->
+    <div class="text-start">
+      <h2> Questions sur la virtualisation</h2>
+      <p> Dans cette première partie, nous allons répondre à toutes les questions
+      autour de la machine virtuelle et du concept de la virtualisation.</p>
+    </div>
+
+    <div class="text-start">
+      <h3 class="text-center"> Définition de la virtualisation </h3>
+      <p>
+        La virtualisation permet de simuler sur un ordinateur un ou plusieurs environnement avec des systèmes
+        d'exploitations différents. Elle est très utilisée dans la gestion de ressources volumineuses.
+        Les Hyperviseurs permettent de gérer la virtualisation et la création de ces MV.
+        Il existe 3 types de virtualisation différents chez les hyperviseurs :
+      </p>
+        <ul>
+          <li>Le type 1 est une virtualisation qui accède directement aux ressources de la machine pour
+          créer une machine virtuelle sans passer par le système d'exploitation.</li>
+          <li>Le type 2 s'effectue depuis une application permettant de gérer les machines virtuelles
+            (VirtualBox, VMWare,...). Il passe par le Système d'exploitation pour gérer les ressources et demandes des machines virtuelles. </li>
+          <li>Le type 1-2, aussi appelé Hybride, reprend les caractéristiques des deux types mentionnés plus tôt.
+          Il s'exécute depuis une application mais à un accès direct aux ressources matérielles de l'ordinateur.</li>
+        </ul>
+    </div>
+
+    <div class="text-start">
+      <h3 class="text-center"> Différence entre émulateur, simulateur et outil de virtualisation </h3>
+      <ul>
+        <li>Un émulateur permet de copier les capacités physiques d'un système <strong>à l'identique</strong> pour pouvoir
+          lancer des jeux dessus. On imite le plus possible les capacités de la machine émulée.</li>
+
+        <li>Un simulateur est une représentation virtuelle d'un fonctionnement réel. Par exemple,
+        le simulateur de vol Microsoft ; il nous permet de simuler quelque de chose de la vraie vie (conduire un avion)
+        depuis notre ordinateur (de manière virtuelle).</li>
+
+        <li>La virtualisation se base sur les capacités de la machine hôte : entre autre, les capacités de la machine
+          virtuelle dépend des capacités de la machine hôte.</li>
+      </ul>
+    </div>
+
+    <div class="text-start">
+      <h3 class="text-center"> Type de virtualisation pour les environnements VirtualBox, VmWare Workstation et Stratus </h3>
+      <ul>
+        <li> L'environnement VirtualBox utilise une virtualisation de type 2, c'est-à-dire qu'on utilise un
+          logiciel pour créer des machines virtuelles. </li>
+        <li> VMWare Workstation utilise aussi une virtualisation de type 2 ; les machines virtuelles sont
+          isolées dans le logiciel VMWare. </li>
+        <li> Stratus utilise une virtualisation de type 1. L'entreprise ne produit pas de logiciel mais
+          plutôt des composants simplifiant et rendant la virtualisation plus rapide.  </li>
+      </ul>
+    </div>
+
+    <div class="text-start">
+      <h3 class="text-center"> Forme/lieu de sauvegarde de la machine virtuelle créée </h3>
+      <p>
+        Les lieux de sauvegardes (aussi appelés Snapshot) permettent d'enregistrer l'état d'une machine virtuelle.
+        Elle permet de sauvegarder ce qui se passe actuellement dans la machine virtuel pour pouvoir
+        relancer la machine dans le même état.
+      </p>
+      <p>
+        Au début de l'utilisation de notre Machine Virtuelle, nous n'avons pas utilisé de snapshots, bien qu'ils sont très
+        pratiques, car nous n'avons pas fait de procédure pouvant faire planter la machine virtuelle (et qui nécessiterait
+        donc de relancer une sauvegarde instantanée).
+        Cependant, Nous avons ensuite utilisé les Snapshots pour éviter d'écrire à nouveau le mot de passe du compte par défaut.
+      </p>
+      <p>
+        La machine virtuelle a été stockée par défaut dans le fichier VirtualBox, où se trouve toutes les autres
+        machines crées plus tôt. Elle est stockée localement sur mon ordinateur portable, cependant, nous avons une
+        sauvegarde de la boite virtuelle sur un disque dur externe.
+        Il nous était impossible de sauvegarder l'intégrité de la machine virtuelle sur le cloud dû à des limitations sur
+        le stockage (impossible de stocker 25go de données sur un cloud pouvant stocker 15Go de données).
+      </p>
+      <img src="assets/images/captures_installation/localisation_of_vm.png" class="img-fluid" alt="Localisation de la machine virtuelle">
+      <p>
+        On y retrouve la machine "SAE_S1_03" créée plus bas.<br>
+        Lorsqu'on clique sur le fichier, on observe plusieurs fichiers :
+      </p>
+      <ul>
+        <li>Un dossier Logs</li>
+        <li>Un fichier nommé SAE_S1_03.vbox</li>
+        <li>un fichier SAE_S1_03.vbox-prev</li>
+        <li>SAE_S1_03.vdi</li>
+      </ul>
+      <img src="assets/images/captures_installation/vm_files.png" class="img-fluid" alt="Fichier nécéssaire pour la machine virtuelle">
+      <p>
+        Le premier fichier correspond aux paramètres de la machine virtuelle que nous avons créés.
+        (La mémoire allouée, le nom,...)
+        Le second permet de montrer un aperçu de la boîte virtuelle dans une petite fenêtre dédiée lorsqu'on
+        l'exécute dans VirtualBox.
+      </p>
+      <img src="assets/images/captures_installation/previsualisation.png" class="img-fluid" alt="Prévisualisation de la machine virtuelle">
+      <p>Le troisième fichier est le disque virtuel. Il contient toutes les données de la boîte virtuelle.</p>
+    </div>
+
+    <div class="text-start">
+      <h2>Etapes d'installation de la machine</h2>
+      <p> Dans cette page, nous allons vous détailler toutes les étapes d'installation de notre machine virtuelle, de
+      l'installation de la distribution, du logiciel de virtualisation, de la configuration de notre machine à l'activation de cette dernière.</p>
+    </div>
+
+    <div class="text-start">
+      <h3 class="text-center"> Installation de la distribution Ubuntu</h3>
+      <p>Pour créer notre machine virtuelle, nous avons tout d'abord eu
+        besoin d'obtenir une distribution au choix.
+        Dans notre cas, nous avons choisi la distribution Ubuntu,
+        qui est régliièrement mise à jour et qui est idéale
+        dans le contexte de déploiement d'un site web.
+        Nous avons obtenue la distribution Ubuntu depuis le site web officiel
+        <a href="https://www.ubuntu-fr.org/" target="_blank">https://www.ubuntu-fr.org/</a>.
+      </p>
+      <img src="assets/images/captures_installation/ubuntu_website.png" class="img-fluid" alt ="Le site officiel d'Ubuntu">
+      <p>
+        Une fois Ubuntu installée sous forme d'ISO (une image disque), on devra maintenant choisir notre logiciel pour créer la machine Virtuelle.
+        Dans notre cas, nous avons choisi VirtualBox,
+        car c'est un logiciel que j'ai déjà pris en main et dont l'installation est très guidée.
+        Nous avons installé VirtualBox depuis le site web officiel
+        <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">https://www.virtualbox.org/wiki/Downloads</a>.
+        Une fois VirtualBox installé, on a créé notre machine Virtuelle.
+      </p>
+      <img src="assets/images/captures_installation/virtualbox_website.png" class="img-fluid" alt ="Le site officiel d'Oracle VirtualBox">
+    </div>
+
+    <div class="text-start">
+      <h3 class="text-center">Configuration de la machine</h3>
+      <p>
+        Nous avons configuré son chemin d'accès et choisi l'image disque de notre choix, donc la distribution Ubuntu. Le logiciel reconnaît immédiatement le type (Linux) et la version de l'image disque (Ubuntu 64 bit), ce qui facilite la configuration.
+        Nous avons passé le téléchargement guidé pour pouvoir créé notre propre utilisateur directement dans Ubuntu.
+      </p>
+      <img src="assets/images/captures_installation/step1_config.png" class="img-fluid" alt ="Définition du nom de notre VM">
+      <p>
+        Pour la configuration matérielle, nous avons décider d'allouer 4096Mo de mémoire vive, soit 4go,
+        afin que le système puisse avoir la mémoire nécessaire, et nous avons choisi un seli CPU car
+        nous n'avons pas besoin de plusieurs cœurs.
+      </p>
+      <img src="assets/images/captures_installation/step2_config.png" class="img-fluid" alt ="Configuration de la mémoire vive">
+      <p>
+        Ensuite, nous allouerons 25Go pour le disque virtuel de la machine car c'est tout ce qui me reste de stockage sur
+        mon ordinateur portable. On pré alloue toute la mémoire en avance afin d'éviter de manquer d'espace sur notre
+        machine virtuelle si nous installons d'autre processus sur notre machine hôte.
+      </p>
+      <img src="assets/images/captures_installation/step3_config.png" class="img-fluid" alt ="Configuration du disque virtuel">
+    <p>
+      Une fois la configuration terminée, nous avons exécuté la machine virtuelle
+      et avons configuré Ubuntu avant de l'installer.
+    </p>
+    <img src="assets/images/captures_installation/launch_vm.png" class="img-fluid" alt ="Démarrage de la machine virtuelle">
+    </div>
+
+    <div class="text-start">
+      <h3 class="text-center"> Installation de Ubuntu sur la machine</h3>
+      <img src="assets/images/captures_installation/ubuntu_install.png" class="img-fluid" alt ="">
+      <img src="assets/images/captures_installation/ubuntu_installe.png" class="img-fluid" alt ="">
+    </div>
+
+    <div class="text-start">
+      <h2>Utilisation de la machine virtuelle</h2>
+      <h3 class="text-center"> Création d'un compte administrateur</h3>
+      <p>
+        Pour créer un compte administrateur, nous avons exécuté le terminal et avons utilisé la commande <code>adduser [compte]</code>,
+        précédé de <code>sudo</code> permettant d'utiliser les droits de super utilisateur pour exécuter la commande.
+      </p>
+      <img src="assets/images/captures_installation/adduser_admin.png" class="img-fluid" alt ="Création du super user">
+      <p>
+        Cependant, nous avons remarqué que le compte créée n'est qu'un simple utilisateur.
+        Pour le transformer en super user, nous avons utilisé la commande <code>usermod -aG [groupe][utilisateur]</code>, qui
+        permet de modifier un utilisateur existant. Le paramètre <code>-aG</code> nous permet de rajouter l'utilisateur dans un
+        groupe. Nous l'avons inclus dans le groupe <code>sudo</code>, qui désigne les super utilisateurs.
+      </p>
+      <img src="assets/images/captures_installation/admin_sudo.png" class="img-fluid" alt ="Ajout de notre compte dans le groupe sudo">
+      <p>
+        Ainsi, nous avons un compte administrateur *admin_grp03_binome02*.
+      </p>
+    </div>
+
+    <div class="text-start">
+      <h3 class="text-center"> Création de deux utilisateurs </h3>
+      <p>
+        Pour créer deux utilisateurs basiques (respectivement binome02_1 et binome02_2),
+        nous avons tout d'abord utilisé <code>addgroup [nom_groupe]</code> où nous
+        réunirons les utilisateurs.
+      </p>
+      <img src="assets/images/captures_installation/crea_groupe.png" class="img-fluid" alt ="Création du groupe binome02">
+      <p>
+        Nous avons ensuite réutilisé <code>adduser [nom]</code> deux fois pour créer nos utilisateurs.
+      </p>
+      <img src="assets/images/captures_installation/crea_binome.png" class="img-fluid" alt ="Création du premier binôme">
+      <img src="assets/images/captures_installation/crea_binome2.png" class="img-fluid" alt ="Création du second binôme">
+      <p>
+        Pour les rajouter dans le groupe, il nous a suffi d'utiliser <code>adduser [nom] [groupe]</code>
+        avec les deux différents utilisateurs.
+      </p>
+      <img src="assets/images/captures_installation/ajout_user_grp.png" class="img-fluid" alt ="Ajout des deux utilisateurs dans le groupe créé">
+    </div>
+
+    <div class="text-start">
+      <h3 class="text-center"> Personnalisation de l'invite de commande </h3>
+      <p>
+        Pour personnaliser l'invite de commande, nous avons d'abord utilisé la variable <code>PS1</code>.
+        Après plusieurs recherches internet et de nombreux essais, nous avons réussi à personnaliser
+        le shell avec des couleurs et des informations pertinentes :
+      </p>
+      <img src="assets/images/captures_installation/1ere_perso.png" class="img-fluid" alt ="Première personnalisation du shell">
+      <img src="assets/images/captures_installation/2eme_perso.png" class="img-fluid" alt ="Deuxième personnalisation">
+      <p>
+        Pour modifier le shell, nous avons utilisé les structures de coloration <code>\e[(nombre)m</code>, où <code>\e</code>
+        définit le point de départ de coloration, <code>[(nombre)</code> désigne un nombre ou numéro de colieur
+        de style ou de fond (on peut ajouter plusieurs valeurs si elles sont séparées par un <code>;</code>) et enfin le <code>m</code>
+        qui définit la fin de la coloration.
+        <br>
+        Nous avons ajouté des petits ajustements pour obtenir le résultat final :
+      </p>
+      <img src="assets/images/captures_installation/3eme_perso.png" class="img-fluid" alt ="Personnalisation finale du shell">
+      <p>
+        Nous avons adopté la disposition suivante :
+      </p>
+        <ul>
+          <li> Affichage de la date en cyan pâle </li>
+          <li> Affichage de l'heure en bleu pâle </li>
+          <li> Affichage du nom de l'utilisateur en magenta pâle </li>
+          <li> Affichage du nom de la machine (séparé par un caractère spécial) en magenta pâle </li>
+          <li> Affichage du répertoire courant en jaune pâle </li>
+        </ul>
+      <p>
+        Cependant, après avoir personnalisé l'invite de commande, éteint et rallumé la VM quelques jours
+        après, nous avons constaté que les changements étaient temporaires.
+        Nous avons donc dû passer par le shell pour modifier de manière permanente le shell.
+      </p>
+      <p>
+        Pour cela, nous avons fait des recherches et nous avons trouvé que le fichier de configuration du bash est
+        localisé dans le répertoire domicile, sous le nom <code>.bashrc</code>.
+        En cas d'erreurs, il est nécessaire de pouvoir restaurer le fichier original :
+        nous avons donc créer une backup (une sauvegarde/copie) du fichier nommé <code>.bashrc.bak</code>
+        (l'extension .bak précise que nous avons bien une sauvegarde).
+      </p>
+      <p>
+        Nous avons ensuite appelé <code>nano</code> sur le fichier <code>.bashrc</code>. <code>nano</code> permet de visualiser
+        et de modifier le fichier depuis le terminal.
+        Nous avons simplement ajouté à la fin du script la ligne <code>export PS1='\e[90m[\e[36;1m\d\e[0m\e[90m]
+        \e[90m(\e[94;1m\t\e[0m\e[90m) \e[95;1m\u◊\h\e[0m:\e[93m\W> \e[0m'</code> pour forcer le script à exporter
+        la variable PS1 dans l'environnement à chaque exécution du bash.
+      </p>
+      <img src="assets/images/captures_installation/nano_perm.png" class="img-fluid" alt ="Exportation de PS1 avec nano">
+      <p>
+        Après avoir redémarré ma machine virtuelle et réexécuter le terminal,
+        on peut constater que les changements du shell ont été appliqués.
+      </p>
+    </div>
+    <!--Partie footer-->
+    <footer class="footer" id="contact">
+      <div class="social">
+        <a href="mailto:ines.ladjenef@etu.u-paris.fr"><i class="ri-mail-unread-fill"></i></a>
+        <a href="mailto:amina.outtaleb@etu.u-paris.fr" target="blank"><i class="ri-mail-open-fill"></i></a>
+        <a href="fancois-xavier.de-beketch@etu.u-paris.fr" target="blank"><i class="ri-mail-send-fill"></i></a>
+      </div>
+      <p class="copyright">
+        Site web réalisé par
+        <a href="https://github.com/AminaStudent" target="_blank" style="color: white;">
+          <u>Amina</u></a>,
+
+        <a href="https://github.com/in3sl4d" target="_blank" style="color: white;">
+          <u>Inès</u></a>  et
+
+        <a href="https://github.com/Artenka76" target="_blank" style="color: white;">
+          <u>François-Xavier</u> </a>
+
+      </p>
+    </footer>
+
+    <!--Link Bootstrap for JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+
+    </body>
+</html>
